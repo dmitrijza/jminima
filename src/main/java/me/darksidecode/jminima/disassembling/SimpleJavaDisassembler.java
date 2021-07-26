@@ -43,9 +43,9 @@ public class SimpleJavaDisassembler implements JavaDisassembler {
 
                 if (bytes.length > 4) {
                     String magicNumberHex = String.format(
-                            "%02X%02X%02X%02X", bytes[0], bytes[1], bytes[2], bytes[3]);
+                            "%2x%2x%2x%2x", bytes[0], bytes[1], bytes[2], bytes[3]);
 
-                    if (magicNumberHex.equalsIgnoreCase("cafebabe"))
+                    if (magicNumberHex.equals("cafebabe"))
                         return disassembleJavaClass(entry.getName(), bytes);
                 }
             }
